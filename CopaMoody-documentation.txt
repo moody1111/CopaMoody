@@ -1,0 +1,85 @@
+MODEL_DOCUMENTATION.md
+# Transformer Model Documentation
+
+## Overview
+
+This document provides an overview of the Transformer model implemented using TensorFlow and the Hugging Face Transformers library. The model is designed for natural language processing tasks and is built on the BERT architecture.
+
+## Author
+
+- **Author**: [Mahmoud Dakroury]
+- **Email**: [Moody.eg@msn.com]
+- **GitHub**: [Your GitHub Profile] (optional)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
+## Model Architecture
+
+The model consists of the following components:
+
+- **Embedding Layer**: Converts input tokens into dense vectors.
+- **Multi-Head Attention Layers**: Allows the model to focus on different parts of the input sequence.
+- **Feedforward Neural Network Layers**: Applies a non-linear transformation to the output of the attention layers.
+- **Layer Normalization**: Normalizes the output of each layer to stabilize training.
+- **Dropout Layers**: Prevents overfitting by randomly setting a fraction of input units to zero during training.
+- **Output Layer**: Produces the final predictions.
+
+## Model Hyperparameters
+
+- **Vocabulary Size**: The size of the tokenizer's vocabulary.
+- **d_model**: The dimensionality of the embedding space (set to 768).
+- **num_heads**: The number of attention heads (set to 12).
+- **num_layers**: The number of layers in the model (set to 12).
+- **dim_feedforward**: The dimensionality of the feedforward network (set to 3072).
+- **dropout_rate**: The dropout rate (set to 0.1).
+
+## Capabilities
+
+The Transformer model can be used for various natural language processing tasks, including but not limited to:
+
+- **Text Classification**: Classifying text into predefined categories.
+- **Text Generation**: Generating coherent text based on input prompts.
+- **Question Answering**: Providing answers to questions based on context.
+- **Sentiment Analysis**: Analyzing the sentiment of a given text.
+
+## Usage
+
+### Loading the Model
+
+To load the trained model, use the following code:
+
+```python
+import tensorflow as tf
+
+# Initialize the model
+model = TransformerModel(vocab_size, d_model, num_heads, num_layers, dim_feedforward, dropout_rate)
+
+# Load weights
+model.load_weights("CACHE_DIRECTORY_PLACEHOLDER\\copamoody_model.h5")
+Preparing Input Data
+To prepare input data for the model, use the encode_examples function provided in the code. This function tokenizes the input text and creates attention masks.
+
+Training the Model
+The model can be trained using the fit method:
+
+python
+
+model.fit(train_dataset, validation_data=val_dataset, epochs=3)
+Saving the Model
+After training, the model can be saved using:
+
+python
+
+model.save_weights("CACHE_DIRECTORY_PLACEHOLDER\\copamoody_model.h5")
+Conclusion
+This Transformer model provides a robust framework for various NLP tasks. By leveraging the power of attention mechanisms and deep learning, it can achieve state-of-the-art performance on many benchmarks
+### Instructions to Add the Documentation to GitHub
+
+1. Create a new file in your project directory and name it `MODEL_DOCUMENTATION.md`.
+2. Copy and paste the above content into the file.
+3. Replace any placeholders (like `CACHE_DIRECTORY_PLACEHOLDER`) with the actual paths you are using.
+4. Commit the changes to your GitHub repository.
+
+This documentation will help users understand the capabilities of your model and how to utilize it effectively.
